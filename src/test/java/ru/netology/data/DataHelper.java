@@ -44,23 +44,33 @@ public class DataHelper {
         return LocalDate.now().format(DateTimeFormatter.ofPattern("yy"));
     }
 
+    public static Holder validHolder(String locale) {
+        return new Holder(approvedCard().Number, generateYear(), generateMonth(), randomHolder(locale), randomCVV());
+    }
 
-//    public static String generateDate(int shift) {
-//        return LocalDate.now().plusDays(shift).format(DateTimeFormatter.ofPattern("dd.MM.yyyy"));
-//    }
-
-
-
-//    public static AuthInfo getAuthInfo() {
-//        return new AuthInfo ("vasya", "qwerty123");
-//    }
-
-
+    public static Holder declinedHolder(String locale) {
+        return new Holder(declinedCard().Number, generateYear(), generateMonth(), randomHolder(locale), randomCVV());
+    }
 
     @Value
     public static class CardNumber {
         String Number;
     }
+
+    @Value
+    public static class Holder {
+        String Number;
+        String Year;
+        String Month;
+        String Holder;
+        String CVV;
+
+    }
+
+
+
+
+
 
 
 
