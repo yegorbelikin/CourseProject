@@ -21,6 +21,12 @@ public class PayByCardPage {
     public final SelenideElement cardHolder = $("div:nth-child(3) .input__control");
     public final SelenideElement cardCVV = $("[placeholder='999']");
     public final SelenideElement sendButton = $("div:nth-child(4) button");
+    public final SelenideElement successTitle = $(byText("Операция одобрена Банком."));
+    public final SelenideElement errorField = $(".input_invalid .input__sub");
+    public final SelenideElement errorBankRefused = $(byText("Ошибка! Банк отказал в проведении операции."));
+//    public final SelenideElement errorMonth = $(".input_invalid .input__sub");
+//    public final SelenideElement errorYear = $(".input_invalid .input__sub");
+//    public final SelenideElement errorHolder = $(".input_invalid .input__sub");
 
 
     public void approveHolder (DataHelper.Holder holder) {
@@ -30,27 +36,49 @@ public class PayByCardPage {
         cardHolder.setValue(holder.getHolder());
         cardCVV.setValue(holder.getCVV());
         sendButton.click();
-        //        shouldBe(Condition.visible);
+
     }
 
+    public void holderWithoutCard (DataHelper.Holder holder) {
+        cardMonth.setValue(holder.getMonth());
+        cardYear.setValue(holder.getYear());
+        cardHolder.setValue(holder.getHolder());
+        cardCVV.setValue(holder.getCVV());
+    }
+
+    public void holderWithoutMonth (DataHelper.Holder holder) {
+        cardNumber.setValue(holder.getNumber());
+        cardYear.setValue(holder.getYear());
+        cardHolder.setValue(holder.getHolder());
+        cardCVV.setValue(holder.getCVV());
+    }
+
+    public void holderWithoutYear (DataHelper.Holder holder) {
+        cardNumber.setValue(holder.getNumber());
+        cardMonth.setValue(holder.getMonth());
+        cardHolder.setValue(holder.getHolder());
+        cardCVV.setValue(holder.getCVV());
+    }
+
+    public void holderWithoutHolder (DataHelper.Holder holder) {
+        cardNumber.setValue(holder.getNumber());
+        cardMonth.setValue(holder.getMonth());
+        cardYear.setValue(holder.getYear());
+        cardCVV.setValue(holder.getCVV());
+    }
+
+    public void holderWithoutCVV (DataHelper.Holder holder) {
+        cardNumber.setValue(holder.getNumber());
+        cardMonth.setValue(holder.getMonth());
+        cardYear.setValue(holder.getYear());
+        cardHolder.setValue(holder.getHolder());
+    }
+
+    public void holderWithoutYearAndMonth (DataHelper.Holder holder) {
+        cardNumber.setValue(holder.getNumber());
+        cardHolder.setValue(holder.getHolder());
+        cardCVV.setValue(holder.getCVV());
+    }
 }
 
 
-
-//    pageTitle.shouldHave(text("Личный кабинет")).shouldBe(Condition.visible);
-//    public void approveHolder () {
-//
-//        var approvedNumber = DataHelper.approvedCard();
-//        var randomCVV = DataHelper.randomCVV();
-//        var randomMonth = DataHelper.generateMonth();
-//        var randomYear = DataHelper.generateYear();
-//        var randomHolder = DataHelper.randomHolder("en");
-//
-//        cardNumber.setValue(approvedNumber.getNumber());
-//        cardMonth.setValue(randomMonth);
-//        cardYear.setValue(randomYear);
-//        cardHolder.setValue(randomHolder);
-//        cardCVV.setValue(randomCVV);
-//        sendButton.click();
-//
-//    }

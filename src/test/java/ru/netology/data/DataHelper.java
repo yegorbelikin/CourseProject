@@ -18,14 +18,27 @@ public class DataHelper {
         return faker.name().lastName() + " " + faker.name().firstName();
     }
 
+    public static String randomHolderName(String locale) {
+        Faker faker = new Faker(new Locale(locale));
+        return faker.name().firstName();
+    }
+
+    public static String randomHolderWithHyphen(String locale) {
+        Faker faker = new Faker(new Locale(locale));
+        return faker.name().lastName() + "-" + faker.name().firstName();
+    }
+
+    public static String randomHolderWithFiveWords(String locale) {
+        Faker faker = new Faker(new Locale(locale));
+        return faker.name().lastName() + " " + faker.name().firstName() + " " + faker.name().firstName() + " " + faker.name().firstName() + " " + faker.name().firstName();
+    }
+
     public static String randomNumber() {
         return faker.numerify("################");
-
     }
 
     public static String randomCVV() {
         return faker.numerify("###");
-
     }
 
     public static CardNumber approvedCard() {
@@ -43,6 +56,19 @@ public class DataHelper {
     public static String generateYear() {
         return LocalDate.now().format(DateTimeFormatter.ofPattern("yy"));
     }
+
+    public static String generateEarlyYear(int shift) {
+        return LocalDate.now().minusYears(shift).format(DateTimeFormatter.ofPattern("yy"));
+    }
+
+    public static String generateEarlyMonth(int shift) {
+        return LocalDate.now().minusMonths(shift).format(DateTimeFormatter.ofPattern("MM"));
+    }
+
+    public static String generateLaterMonth(int shift) {
+        return LocalDate.now().plusMonths(shift).format(DateTimeFormatter.ofPattern("MM"));
+    }
+
 
     public static Holder validHolder(String locale) {
         return new Holder(approvedCard().Number, generateYear(), generateMonth(), randomHolder(locale), randomCVV());
