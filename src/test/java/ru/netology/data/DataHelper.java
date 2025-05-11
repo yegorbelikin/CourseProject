@@ -74,9 +74,9 @@ public class DataHelper {
         return new Holder(approvedCard().Number, generateYear(), generateMonth(), randomHolder(locale), randomCVV());
     }
 
-    public static Holder declinedHolder(String locale) {
-        return new Holder(declinedCard().Number, generateYear(), generateMonth(), randomHolder(locale), randomCVV());
-    }
+//    public static Holder declinedHolder(String locale) {
+//        return new Holder(declinedCard().Number, generateYear(), generateMonth(), randomHolder(locale), randomCVV());
+//    }
 
     @Value
     public static class CardNumber {
