@@ -56,11 +56,12 @@ public class MarrakechTest {
     void sendWithCardNumberLat() {
         var payByCardPage = homePage.payByCard();
         var holder = DataHelper.validHolder("en");
-        payByCardPage.approveHolder(DataHelper.randomHolderName("en"), holder.getMonth(), holder.getYear(), holder.getHolder(), holder.getCVV());
+        payByCardPage.approveHolder(DataHelper.validHolder("en").getNumber(), DataHelper.validHolder("en").getMonth(), DataHelper.validHolder("en").getYear(), DataHelper.validHolder("en").getHolder(), DataHelper.validHolder("en").getCVV());
         payByCardPage.findErrorInField("Неверный формат");
 
     }
-//
+    
+//DataHelper.randomHolderName("en")
 //    @Test
 //    void sendWithCardNumberKir() {
 //        var payByCardPage = homePage.payByCard();

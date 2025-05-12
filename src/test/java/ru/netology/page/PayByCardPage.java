@@ -38,6 +38,7 @@ public class PayByCardPage {
 
     }
 
+
     public void findErrorInField (String errorText){
         errorField.shouldHave(Condition.text(errorText), Duration.ofSeconds(15))
                 .shouldBe(Condition.visible);;
@@ -52,7 +53,6 @@ public class PayByCardPage {
         successTitle.shouldHave(Condition.text("Операция одобрена Банком."), Duration.ofSeconds(15))
                 .shouldBe(Condition.visible);;
     }
-
 
 
 
