@@ -2,17 +2,15 @@ package ru.netology.page;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 import ru.netology.data.DataHelper;
 
 import java.time.Duration;
-import java.util.List;
 
-import static com.codeborne.selenide.Condition.text;
+
+
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.$$;
+
 
 public class PayByCardPage {
 
