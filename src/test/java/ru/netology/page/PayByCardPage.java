@@ -21,7 +21,11 @@ public class PayByCardPage {
     private final SelenideElement cardCVV = $("[placeholder='999']");
     private final SelenideElement sendButton = $("div:nth-child(4) button");
     private final SelenideElement successTitle = $(byText("Операция одобрена Банком."));
-    private final SelenideElement errorField = $(".input_invalid .input__sub");
+    private final SelenideElement errorNumber = $("div:nth-child(1) span.input__sub");
+    private final SelenideElement errorMonth = $("div:nth-child(2) span:nth-child(1) span.input__sub");
+    private final SelenideElement errorYear = $("div:nth-child(2) span:nth-child(2) span.input__sub");
+    private final SelenideElement errorHolder = $("div:nth-child(3) span:nth-child(1) span.input__sub");
+    private final SelenideElement errorCVV = $("div:nth-child(3) span:nth-child(2) span.input__sub");
     private final SelenideElement errorBankRefused = $(byText("Ошибка! Банк отказал в проведении операции."));
 
 
@@ -37,8 +41,28 @@ public class PayByCardPage {
     }
 
 
-    public void findErrorInField (String errorText){
-        errorField.shouldHave(Condition.text(errorText), Duration.ofSeconds(15))
+    public void findErrorInNumber (String errorText){
+        errorNumber.shouldHave(Condition.text(errorText), Duration.ofSeconds(15))
+                .shouldBe(Condition.visible);;
+    }
+
+    public void findErrorInMonth (String errorText){
+        errorMonth.shouldHave(Condition.text(errorText), Duration.ofSeconds(15))
+                .shouldBe(Condition.visible);;
+    }
+
+    public void findErrorInYear (String errorText){
+        errorYear.shouldHave(Condition.text(errorText), Duration.ofSeconds(15))
+                .shouldBe(Condition.visible);;
+    }
+
+    public void findErrorInHolder (String errorText){
+        errorHolder.shouldHave(Condition.text(errorText), Duration.ofSeconds(15))
+                .shouldBe(Condition.visible);;
+    }
+
+    public void findErrorInCVV (String errorText){
+        errorCVV.shouldHave(Condition.text(errorText), Duration.ofSeconds(15))
                 .shouldBe(Condition.visible);;
     }
 

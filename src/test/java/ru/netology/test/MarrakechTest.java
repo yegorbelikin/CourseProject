@@ -50,7 +50,7 @@ public class MarrakechTest {
     void sendWithCardNumberLat() {
         var payByCardPage = homePage.payByCard();
         payByCardPage.approveHolder(DataHelper.holderWithCardNumberLat("en"));
-        payByCardPage.findErrorInField("Неверный формат");
+        payByCardPage.findErrorInNumber("Неверный формат");
 
     }
 
@@ -58,21 +58,21 @@ public class MarrakechTest {
     void sendWithCardNumberKir() {
         var payByCardPage = homePage.payByCard();
         payByCardPage.approveHolder(DataHelper.holderWithCardNumberKir("en"));
-        payByCardPage.findErrorInField("Неверный формат");
+        payByCardPage.findErrorInNumber("Неверный формат");
     }
 
     @Test
     void sendWithCardNumberSpecial() {
         var payByCardPage = homePage.payByCard();
         payByCardPage.approveHolder(DataHelper.holderWithCardNumberSpecial("en"));
-        payByCardPage.findErrorInField("Неверный формат");
+        payByCardPage.findErrorInNumber("Неверный формат");
     }
 
     @Test
     void sendWithCardNumberThreeDigits() {
         var payByCardPage = homePage.payByCard();
         payByCardPage.approveHolder(DataHelper.holderWithCardNumberThreeDigits("en"));
-        payByCardPage.findErrorInField("Неверный формат");
+        payByCardPage.findErrorInNumber("Неверный формат");
     }
 
     @Test
@@ -93,7 +93,7 @@ public class MarrakechTest {
     void sendWithoutCardNumber() {
         var payByCardPage = homePage.payByCard();
         payByCardPage.approveHolder(DataHelper.holderWithoutCardNumber("en"));
-        payByCardPage.findErrorInField("Неверный формат");
+        payByCardPage.findErrorInNumber("Неверный формат");
     }
 
     @Test
@@ -116,28 +116,28 @@ public class MarrakechTest {
     void sendWithMonthLat() {
         var payByCardPage = homePage.payByCard();
         payByCardPage.approveHolder(DataHelper.holderWithMonthLat("en"));
-        payByCardPage.findErrorInField("Неверный формат");
+        payByCardPage.findErrorInMonth("Неверный формат");
     }
 
     @Test
     void sendWithMonthKir() {
         var payByCardPage = homePage.payByCard();
         payByCardPage.approveHolder(DataHelper.holderWithMonthKir("en"));
-        payByCardPage.findErrorInField("Неверный формат");
+        payByCardPage.findErrorInMonth("Неверный формат");
     }
 
     @Test
     void sendWithMonthSpecial() {
         var payByCardPage = homePage.payByCard();
         payByCardPage.approveHolder(DataHelper.holderWithMonthSpecial("en"));
-        payByCardPage.findErrorInField("Неверный формат");
+        payByCardPage.findErrorInMonth("Неверный формат");
     }
 
     @Test
     void sendWithMonthOneDigit() {
         var payByCardPage = homePage.payByCard();
         payByCardPage.approveHolder(DataHelper.holderWithMonthOneDigit("en"));
-        payByCardPage.findErrorInField("Неверный формат");
+        payByCardPage.findErrorInMonth("Неверный формат");
     }
 
     @Test
@@ -151,21 +151,21 @@ public class MarrakechTest {
     void sendWithoutMonth() {
         var payByCardPage = homePage.payByCard();
         payByCardPage.approveHolder(DataHelper.holderWithoutMonth("en"));
-        payByCardPage.findErrorInField("Неверный формат");
+        payByCardPage.findErrorInMonth("Неверный формат");
     }
 
     @Test
     void sendWithMonthLater() {
         var payByCardPage = homePage.payByCard();
         payByCardPage.approveHolder(DataHelper.holderWithMonthLater("en"));
-        payByCardPage.findErrorInField("Неверно указан срок действия карты");
+        payByCardPage.findErrorInMonth("Неверно указан срок действия карты");
     }
 
     @Test
     void sendWithMonthEarly() {
         var payByCardPage = homePage.payByCard();
         payByCardPage.approveHolder(DataHelper.holderWithMonthEarly("en"));
-        payByCardPage.findErrorInField("Неверно указан срок действия карты");
+        payByCardPage.findErrorInMonth("Неверно указан срок действия карты");
     }
 
                                 //    1.5 Сценарии заполнения поля Год невалидными данными
@@ -175,28 +175,28 @@ public class MarrakechTest {
     void sendWithYearLat() {
         var payByCardPage = homePage.payByCard();
         payByCardPage.approveHolder(DataHelper.holderWithYearLat("en"));
-        payByCardPage.findErrorInField("Неверный формат");
+        payByCardPage.findErrorInYear("Неверный формат");
     }
 
     @Test
     void sendWithYearKir() {
         var payByCardPage = homePage.payByCard();
         payByCardPage.approveHolder(DataHelper.holderWithYearKir("en"));
-        payByCardPage.findErrorInField("Неверный формат");
+        payByCardPage.findErrorInYear("Неверный формат");
     }
 
     @Test
     void sendWithYearSpecial() {
         var payByCardPage = homePage.payByCard();
         payByCardPage.approveHolder(DataHelper.holderWithYearSpecial("en"));
-        payByCardPage.findErrorInField("Неверный формат");
+        payByCardPage.findErrorInYear("Неверный формат");
     }
 
     @Test
     void sendWithYearOneDigit() {
         var payByCardPage = homePage.payByCard();
         payByCardPage.approveHolder(DataHelper.holderWithYearOneDigit("en"));
-        payByCardPage.findErrorInField("Неверный формат");
+        payByCardPage.findErrorInYear("Неверный формат");
     }
 
     @Test
@@ -210,7 +210,7 @@ public class MarrakechTest {
     void sendWithoutYear() {
         var payByCardPage = homePage.payByCard();
         payByCardPage.approveHolder(DataHelper.holderWithoutYear("en"));
-        payByCardPage.findErrorInField("Неверный формат");
+        payByCardPage.findErrorInYear("Неверный формат");
     }
 
 
@@ -218,7 +218,7 @@ public class MarrakechTest {
     void sendWithYearEarly() {
         var payByCardPage = homePage.payByCard();
         payByCardPage.approveHolder(DataHelper.holderWithYearEarly("en"));
-        payByCardPage.findErrorInField("Истёк срок действия карты");
+        payByCardPage.findErrorInYear("Истёк срок действия карты");
     }
 
 
@@ -228,42 +228,42 @@ public class MarrakechTest {
     void sendWithHolderKir() {
         var payByCardPage = homePage.payByCard();
         payByCardPage.approveHolder(DataHelper.holderWithHolderKir("en"));
-        payByCardPage.findErrorInField("Неверный формат");
+        payByCardPage.findErrorInHolder("Неверный формат");
     }
 
     @Test
     void sendWithHolderSpecial() {
         var payByCardPage = homePage.payByCard();
         payByCardPage.approveHolder(DataHelper.holderWithHolderSpecial("en"));
-        payByCardPage.findErrorInField("Неверный формат");
+        payByCardPage.findErrorInHolder("Неверный формат");
     }
 
     @Test
     void sendWithoutHolder() {
         var payByCardPage = homePage.payByCard();
         payByCardPage.approveHolder(DataHelper.holderWithoutHolder("en"));
-        payByCardPage.findErrorInField("Поле обязательно для заполнения");
+        payByCardPage.findErrorInHolder("Поле обязательно для заполнения");
     }
 
     @Test
     void sendWithHolderOneWord() {
         var payByCardPage = homePage.payByCard();
         payByCardPage.approveHolder(DataHelper.holderWithHolderOneWord("en"));
-        payByCardPage.findErrorInField("Неверный формат");
+        payByCardPage.findErrorInHolder("Неверный формат");
     }
 
     @Test
     void sendWithHolderFiveWords() {
         var payByCardPage = homePage.payByCard();
         payByCardPage.approveHolder(DataHelper.holderWithHolderFiveWords("en"));
-        payByCardPage.findErrorInField("Неверный формат");
+        payByCardPage.findErrorInHolder("Неверный формат");
     }
 
     @Test
     void sendWithHolderHyphen() {
         var payByCardPage = homePage.payByCard();
         payByCardPage.approveHolder(DataHelper.holderWithHolderHyphen("en"));
-        payByCardPage.findErrorInField("Неверный формат");
+        payByCardPage.findErrorInHolder("Неверный формат");
     }
 
                             //    1.7 Сценарии заполнения поля CVV невалидными данными
@@ -272,28 +272,28 @@ public class MarrakechTest {
     void sendWithCVVLat() {
         var payByCardPage = homePage.payByCard();
         payByCardPage.approveHolder(DataHelper.holderWithCVVLat("en"));
-        payByCardPage.findErrorInField("Неверный формат");
+        payByCardPage.findErrorInCVV("Неверный формат");
     }
 
     @Test
     void sendWithCVVKir() {
         var payByCardPage = homePage.payByCard();
-        payByCardPage.approveHolder(DataHelper.holderWithCVVKir("ru"));
-        payByCardPage.findErrorInField("Неверный формат");
+        payByCardPage.approveHolder(DataHelper.holderWithCVVKir("en"));
+        payByCardPage.findErrorInCVV("Неверный формат");
     }
 
     @Test
     void sendWithCVVSpecial() {
         var payByCardPage = homePage.payByCard();
         payByCardPage.approveHolder(DataHelper.holderWithCVVSpecial("en"));
-        payByCardPage.findErrorInField("Неверный формат");
+        payByCardPage.findErrorInCVV("Неверный формат");
     }
 
     @Test
     void sendWithCVVOneDigit() {
         var payByCardPage = homePage.payByCard();
         payByCardPage.approveHolder(DataHelper.holderWithCVVOneDigit("en"));
-        payByCardPage.findErrorInField("Неверный формат");
+        payByCardPage.findErrorInCVV("Неверный формат");
     }
 
     @Test
@@ -307,7 +307,7 @@ public class MarrakechTest {
     void sendWithoutCVV() {
         var payByCardPage = homePage.payByCard();
         payByCardPage.approveHolder(DataHelper.holderWithoutCVV("en"));
-        payByCardPage.findErrorInField("Неверный формат");
+        payByCardPage.findErrorInCVV("Неверный формат");
     }
 
                         //    1.8 Сценарии заполнения полей Месяц и Год невалидными данными
@@ -316,7 +316,7 @@ public class MarrakechTest {
     void sendWithYearAndMonthEarly() {
         var payByCardPage = homePage.payByCard();
         payByCardPage.approveHolder(DataHelper.holderWithYearAndMonthEarly("en"));
-        payByCardPage.findErrorInField("Истёк срок действия карты");
+        payByCardPage.findErrorInMonth("Истёк срок действия карты");
     }
 
 
